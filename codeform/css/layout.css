@@ -1,0 +1,45 @@
+/* ---------- header ---------- */
+#header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h); z-index: 100; color: #fff; border-bottom: 1px solid transparent; transition: background-color 0.3s, border-color 0.3s, color 0.3s; }
+#header .inner { position: relative; display: flex; align-items: center; justify-content: space-between; height: 100%; }
+
+.header__logo { display: block; line-height: 0; }
+.header__logo img { width: 142px; height: 60px; filter: brightness(0) invert(1); transition: filter 0.3s; }
+
+.header__menu { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; gap: 40px; font-size: 18px; font-weight: 500; line-height: 1.4; }
+.header__menu a { transition: opacity 0.2s; }
+.header__menu a:hover { opacity: 0.7; }
+
+#header.is-scroll { background: #fff; border-color: var(--color-neutral-3); color: var(--color-neutral-9); }
+#header.is-scroll .header__logo img { filter: none; }
+
+@media (max-width: 1023px) {
+    .header__menu { display: none; }
+}
+@media (max-width: 767px) {
+    .header__logo img { width: 143px; height: 30px; }
+}
+
+/* ---------- footer ---------- */
+#footer { background: var(--color-sub-1); color: var(--color-neutral-3); padding: 44px 0 48px; font-size: 14px; line-height: 1.6; }
+#footer .inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+
+.footer__symbol { width: 54px; height: 40px; margin-bottom: 16px; }
+.footer__info { display: flex; flex-wrap: wrap; gap: 0 16px; max-width: 940px; }
+.footer__info > div { display: flex; gap: 4px; white-space: nowrap; }
+.footer__info dt { color: var(--color-neutral-4); }
+.footer__copy { margin-top: 40px; font-size: 12px; line-height: 1.4; }
+
+.footer__btn { flex-shrink: 0; margin-top: 56px; width: 165px; height: 45px; border: 1px solid var(--color-neutral-4); border-radius: 99px; color: #fff; font-weight: 500; font-size: 14px; }
+
+@media (max-width: 1023px) {
+    #footer .inner { flex-direction: column; }
+    .footer__btn { margin-top: 0; }
+}
+@media (max-width: 767px) {
+    #footer { padding: 76px 0 50px; font-size: 13px; }
+    #footer .inner { gap: 30px; }
+    .footer__symbol { width: 30px; height: 22px; margin-bottom: 20px; }
+    .footer__info > div { white-space: normal; }
+    .footer__copy { margin-top: 30px; font-size: 11px; }
+    .footer__btn { width: 135px; height: 35px; font-size: 12px; }
+}

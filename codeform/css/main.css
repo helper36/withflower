@@ -1,0 +1,117 @@
+/* ---------- M1 메인 비주얼 ---------- */
+.m-visual { height: 100vh; min-height: 720px; max-height: 1080px; }
+
+/* ---------- M2 회사소개 ---------- */
+.m-about .inner { display: flex; align-items: center; gap: 155px; }
+.m-about__text { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; width: 655px; flex-shrink: 0; }
+.m-about__text .sec-tit { font-size: 48px; }
+.m-about__quote { display: flex; align-items: center; gap: 10px; width: 100%; padding-top: 28px; border-top: 1px solid var(--color-neutral-3); font-weight: 600; font-size: 20px; line-height: 1.4; color: var(--color-primary); }
+.m-about__quote img { width: 28px; height: 28px; }
+.m-about__img { flex: 1; height: 640px; border-radius: var(--radius-card); }
+
+/* ---------- M4 CEO 인사말 ---------- */
+.m-ceo .inner { display: flex; align-items: center; gap: 155px; }
+.m-ceo__img { width: 655px; height: 820px; flex-shrink: 0; border-radius: var(--radius-card); }
+.m-ceo__text { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; flex: 1; }
+.m-ceo__text .sec-tit { font-size: 40px; line-height: 1.4; }
+.m-ceo__paragraphs { display: flex; flex-direction: column; gap: 18px; font-size: 18px; line-height: 1.8; color: var(--color-neutral-5); }
+.m-ceo__sign { display: flex; align-items: center; gap: 20px; padding-top: 12px; font-size: 17px; color: var(--color-neutral-5); }
+.m-ceo__sign strong { font-weight: 700; font-size: 20px; color: var(--color-neutral-9); }
+
+/* ---------- M5 조직 및 보유역량 ---------- */
+.m-people .inner { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "tit badges" "rows rows"; align-items: end; gap: 72px 155px; }
+.m-people__tit { grid-area: tit; display: flex; flex-direction: column; gap: 20px; }
+.m-people__tit .sec-tit { font-size: 40px; line-height: 1.2; }
+.m-people__tit .sec-desc { color: var(--color-neutral-9); opacity: 0.7; }
+.m-people__badges { grid-area: badges; display: flex; flex-wrap: wrap; gap: 12px; }
+.m-people__badges li { padding: 12px 22px; border-radius: 999px; background: #fff; font-weight: 500; font-size: 16px; line-height: 1.2; color: var(--color-sub-1); white-space: nowrap; }
+.m-people__rows { grid-area: rows; }
+.m-people__row { display: grid; grid-template-columns: 260px 240px 1fr; grid-template-areas: "role field career" "name field career"; align-items: center; gap: 8px 40px; padding: 36px 0; border-top: 1px solid var(--color-neutral-3); }
+.m-people__row:last-child { border-bottom: 1px solid var(--color-neutral-3); }
+.m-people__role { grid-area: role; align-self: end; font-weight: 500; font-size: 16px; line-height: 1.2; color: var(--color-primary); }
+.m-people__name { grid-area: name; align-self: start; font-weight: 700; font-size: 30px; line-height: 1.2; }
+.m-people__field { grid-area: field; font-style: normal; font-weight: 500; font-size: 18px; }
+.m-people__career { grid-area: career; font-size: 17px; line-height: 1.7; opacity: 0.75; }
+.m-people__career li { display: inline; }
+.m-people__career li + li::before { content: "  /  "; white-space: pre; }
+
+/* ---------- M6 제품 바로가기 CTA ---------- */
+.m-cta__box { display: flex; border-radius: var(--radius-card); background: var(--color-primary); color: #fff; overflow: hidden; }
+.m-cta__text { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding: 88px 40px 88px 96px; }
+.m-cta__tit { font-weight: 700; font-size: 40px; line-height: 1.4; letter-spacing: -0.03em; }
+.m-cta__tel { font-size: 16px; }
+.m-cta__btns { display: flex; gap: 12px; margin-top: 8px; }
+.m-cta__img { width: 800px; flex-shrink: 0; min-height: 100%; background: var(--color-sub-1); }
+.m-cta__img img { width: 100%; height: 100%; object-fit: cover; }
+.m-cta__img picture { display: block; height: 100%; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1600px) {
+    .m-about .inner, .m-ceo .inner { gap: 80px; }
+    .m-about__text { width: 45%; }
+    .m-about__img { height: 560px; }
+    .m-ceo__img { width: 45%; height: 700px; }
+    .m-people .inner { gap: 60px 80px; }
+    .m-cta__text { padding: 72px 40px 72px 72px; }
+    .m-cta__img { width: 50%; }
+}
+@media (max-width: 1280px) {
+    .m-visual { max-height: 700px; }
+    .m-about__text .sec-tit { font-size: 40px; }
+    .m-ceo__text .sec-tit, .m-people__tit .sec-tit, .m-cta__tit { font-size: 32px; }
+    .m-people__row { grid-template-columns: 180px 180px 1fr; }
+}
+@media (max-width: 1023px) {
+    .m-visual { min-height: 0; height: 700px; }
+
+    .m-about .inner, .m-ceo .inner { flex-direction: column; align-items: stretch; gap: 48px; }
+    .m-about__text, .m-ceo__img { width: 100%; }
+    .m-about__img { flex: none; height: 480px; }
+    .m-ceo__img { order: 2; height: 560px; }
+    .m-people .inner { grid-template-columns: 1fr; grid-template-areas: "tit" "rows" "badges"; gap: 40px; }
+    .m-people__row { grid-template-columns: auto 1fr; grid-template-areas: "role role" "name field" "career career"; align-items: baseline; gap: 6px 10px; padding: 24px 0; }
+    .m-people__field { color: var(--color-neutral-5); margin-top: auto; }
+
+    .m-cta__box { flex-direction: column; }
+    .m-cta__img { order: -1; width: 100%; height: 360px; }
+}
+@media (max-width: 767px) {
+    /* M2 */
+    .m-about .inner { gap: 20px; }
+    .m-about__text { gap: 20px; }
+    .m-about__text .sec-tit { font-size: 28px; }
+    .m-about__quote { padding-top: 20px; font-weight: 500; font-size: 15px; }
+    .m-about__quote img { width: 20px; height: 20px; }
+    .m-about__img { height: 260px; margin-top: 12px; }
+
+    /* M4 */
+    .m-ceo .inner { gap: 20px; }
+    .m-ceo__text { gap: 20px; padding-top: 16px; }
+    .m-ceo__text .sec-tit { font-size: 22px; line-height: 1.45; }
+    .m-ceo__paragraphs { gap: 14px; font-size: 15px; line-height: 1.75; }
+    .m-ceo__sign { gap: 8px; padding-top: 8px; font-size: 14px; }
+    .m-ceo__sign strong { font-size: 16px; }
+    .m-ceo__img { height: 420px; }
+
+    /* M5 */
+    .m-people .inner { gap: 32px; }
+    .m-people__tit { gap: 16px; }
+    .m-people__tit .sec-tit { font-size: 28px; line-height: 1.35; }
+    .m-people__tit .sec-desc { color: var(--color-neutral-5); opacity: 1; }
+    .m-people__role { font-size: 13px; }
+    .m-people__name { font-size: 22px; }
+    .m-people__field { font-size: 14px; }
+    .m-people__career { padding-top: 6px; font-size: 14px; line-height: 1.65; color: var(--color-neutral-5); opacity: 1; }
+    .m-people__career li { display: block; }
+    .m-people__career li::before, .m-people__career li + li::before { content: "· "; white-space: normal; }
+    .m-people__badges { gap: 6px; }
+    .m-people__badges li { padding: 8px 14px; font-size: 13px; color: var(--color-neutral-9); }
+
+    /* M6 */
+    .m-cta__img { height: 200px; }
+    .m-cta__text { gap: 14px; padding: 32px 24px 36px; }
+    .m-cta__tit { font-size: 22px; line-height: 1.45; }
+    .m-cta__tel { font-size: 14px; opacity: 0.75; }
+    .m-cta__btns { flex-direction: column; width: 100%; gap: 8px; margin-top: 6px; }
+    .m-cta__btns .btn { width: 100%; }
+}
